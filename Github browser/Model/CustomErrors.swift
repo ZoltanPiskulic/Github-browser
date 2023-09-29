@@ -10,5 +10,7 @@ import Foundation
 enum HTTPErrors: Int, Error {
 	case tooManyRequests = 422
 	case serviceUnavailable = 503
+	case forbidden = 403
+	case notFound = 404
 	case other
 }
