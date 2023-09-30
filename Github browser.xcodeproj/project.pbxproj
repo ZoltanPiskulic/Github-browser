@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE44D1252AC31AD500F12B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44D1242AC31AD500F12B48 /* AppDelegate.swift */; };
 		CE44D1272AC31AD500F12B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44D1262AC31AD500F12B48 /* SceneDelegate.swift */; };
-		CE44D1292AC31AD500F12B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44D1282AC31AD500F12B48 /* ViewController.swift */; };
-		CE44D12C2AC31AD500F12B48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44D12A2AC31AD500F12B48 /* Main.storyboard */; };
+		CE44D1292AC31AD500F12B48 /* GitRepoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44D1282AC31AD500F12B48 /* GitRepoSearchViewController.swift */; };
+		CE44D12C2AC31AD500F12B48 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44D12A2AC31AD500F12B48 /* Search.storyboard */; };
 		CE44D12E2AC31AD700F12B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE44D12D2AC31AD700F12B48 /* Assets.xcassets */; };
 		CE44D1312AC31AD700F12B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44D12F2AC31AD700F12B48 /* LaunchScreen.storyboard */; };
 		CE44D13E2AC56DC400F12B48 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44D13D2AC56DC400F12B48 /* Networking.swift */; };
@@ -28,8 +28,8 @@
 		CE44D12D2AC31AD700F12B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE44D1302AC31AD700F12B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE44D1322AC31AD700F12B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE44D13D2AC56DC400F12B48 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		CE44D13F2AC5704E00F12B48 /* GitRepoSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoSearchModel.swift; sourceTree = "<group>"; };
+		CE44D13D2AC56DC400F12B48 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		CE44D13F2AC5704E00F12B48 /* GitRepoSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoSearchResultModel.swift; sourceTree = "<group>"; };
 		CE44D1412AC5949700F12B48 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		CE44D1432AC6C23A00F12B48 /* GitRepoDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,9 +78,9 @@
 		CE44D1382AC31AE400F12B48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE44D13D2AC56DC400F12B48 /* Networking.swift */,
+				CE44D13D2AC56DC400F12B48 /* GitHubService.swift */,
 				CE44D1412AC5949700F12B48 /* CustomErrors.swift */,
-				CE44D13F2AC5704E00F12B48 /* GitRepoSearchModel.swift */,
+				CE44D13F2AC5704E00F12B48 /* GitRepoSearchResultModel.swift */,
 				CE44D1432AC6C23A00F12B48 /* GitRepoDetailsModel.swift */,
 			);
 			path = Model;

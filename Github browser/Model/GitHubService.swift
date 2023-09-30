@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol Network {
-	func searchRepos(withQuery query: String, forPageNumber pageNumber: Int) async throws -> GitRepos
+protocol ApiService {
+	func searchRepos(withQuery query: String, forPageNumber pageNumber: Int) async throws -> GitRepoSearchResultModel
 	func getRepoDetails(ofOwner ownerName: String, ofRepo repoName: String) async throws -> GitRepoDetails
 }
 
-class Networking: Network {
+class GitHubService: ApiService {
 
 	let baseURL = "https://api.github.com"
 
@@ -21,41 +21,42 @@ class Networking: Network {
 		case repoDetails = "/repos"
 	}
 
-	func searchRepos(withQuery query: String, forPageNumber pageNumber: Int = 1) async throws -> GitRepos {
-		guard let url = URL(string: baseURL + Endpoints.repos.rawValue + "?q=\(query)&page=\(pageNumber)" ) else {
-			throw HTTPErrors.other
+	func searchRepos(withQuery query: String, forPageNumber pageNumber: Int) async throws -> GitRepoSearchResultModel {
+		guard let percentEncodedQuery = query.addingPercentEncoding(withAllowedCharacters: .whitespaces),
+				let url = URL(string: baseURL + Endpoints.repos.rawValue + "?q=\(percentEncodedQuery)&page=\(pageNumber)" ) else {
+			throw ServiceErrors.other
 		}
 
 		let (data, response) = try await URLSession.shared.data(from: url)
 		guard let httpResponse = response as? HTTPURLResponse else {
-			throw HTTPErrors.other
+			throw ServiceErrors.other
 		}
 
 		guard httpResponse.statusCode == 200 else {
-			if let knownError = HTTPErrors(rawValue: httpResponse.statusCode) {
+			if let knownError = ServiceErrors(rawValue: httpResponse.statusCode) {
 				throw knownError
 			} else {
-				throw HTTPErrors.other
+				throw ServiceErrors.other
 			}
 		}
-		return try JSONDecoder().decode(GitRepos.self, from: data)
+		return try JSONDecoder().decode(GitRepoSearchResultModel.self, from: data)
 	}
 
 	func getRepoDetails(ofOwner ownerName: String, ofRepo repoName: String) async throws -> GitRepoDetails {
 		guard let url = URL(string: baseURL + Endpoints.repos.rawValue + "/\(ownerName)/\(repoName)" ) else {
-			throw HTTPErrors.other
+			throw ServiceErrors.other
 		}
 
 		let (data, response) = try await URLSession.shared.data(from: url)
 		guard let httpResponse = response as? HTTPURLResponse else {
-			throw HTTPErrors.other
+			throw ServiceErrors.other
 		}
 
 		guard httpResponse.statusCode == 200 else {
-			if let knownError = HTTPErrors(rawValue: httpResponse.statusCode) {
+			if let knownError = ServiceErrors(rawValue: httpResponse.statusCode) {
 				throw knownError
 			} else {
-				throw HTTPErrors.other
+				throw ServiceErrors.other
 			}
 		}
 		return try JSONDecoder().decode(GitRepoDetails.self, from: data)
