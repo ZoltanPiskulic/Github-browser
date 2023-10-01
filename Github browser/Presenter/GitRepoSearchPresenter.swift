@@ -9,12 +9,7 @@ import UIKit
 
 protocol GitSearchView: UIViewController {
 	func displayResults(results: [RepoSearchResultItem])
-	func displayTooManyRequestsError()
-	func displayServiceUnavailableError()
-	func displayFobiddenError()
-	func displayNotFoundError()
-	func displayNoResultsError()
-	func displayGenericError()
+	func displayErrorMessage(forError: ServiceErrors)
 }
 
 class GitRepoSearchPresenter {
@@ -27,6 +22,7 @@ class GitRepoSearchPresenter {
 		self.service = service
 	}
 
+	@MainActor
 	func fetchRepos(withQuery query: String) {
 		Task {
 			do {
@@ -46,27 +42,9 @@ class GitRepoSearchPresenter {
 
 	func handleError(error: Error) {
 		guard let unwrappedError = error as? ServiceErrors else {
-			view?.displayGenericError()
+			self.view?.displayErrorMessage(forError: .other)
 			return
 		}
-		switch unwrappedError {
-			case ServiceErrors.tooManyRequests:
-				view?.displayTooManyRequestsError()
-
-			case ServiceErrors.serviceUnavailable:
-				view?.displayServiceUnavailableError()
-
-			case ServiceErrors.forbidden:
-				view?.displayServiceUnavailableError()
-
-			case ServiceErrors.notFound:
-				view?.displayNotFoundError()
-
-			case ServiceErrors.noResult:
-				view?.displayNoResultsError()
-
-			case ServiceErrors.other:
-				view?.displayGenericError()
-		}
+		self.view?.displayErrorMessage(forError: unwrappedError)
 	}
 }

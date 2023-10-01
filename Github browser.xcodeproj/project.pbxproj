@@ -243,6 +243,7 @@
 				CEB8B3912AC9A049002FBFE2 /* ErrorPopup.swift in Sources */,
 				CE44D1292AC31AD500F12B48 /* GitRepoSearchViewController.swift in Sources */,
 				CEB8B3852AC86E07002FBFE2 /* SearchResultTableViewCell.swift in Sources */,
+				CEB8B38F2AC989BB002FBFE2 /* LoaderView.swift in Sources */,
 				CE44D1422AC5949700F12B48 /* CustomErrors.swift in Sources */,
 				CE44D1442AC6C23A00F12B48 /* GitRepoDetailsModel.swift in Sources */,
 				CE44D1252AC31AD500F12B48 /* AppDelegate.swift in Sources */,

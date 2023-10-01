@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-1b-GEw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-1b-GEw">
                                 <rect key="frame" x="30" y="188" width="330" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -51,8 +51,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="eQL-Nb-CFO"/>
                     <connections>
-                        <outlet property="errorLabelOutlet" destination="JYE-b0-dXC" id="eHC-XA-4uw"/>
-                        <outlet property="searchTextFieldOutlet" destination="Jgl-1b-GEw" id="dzX-kR-ysy"/>
+                        <outlet property="errorLabel" destination="JYE-b0-dXC" id="eHC-XA-4uw"/>
+                        <outlet property="searchTextField" destination="Jgl-1b-GEw" id="dzX-kR-ysy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
