@@ -8,7 +8,7 @@
 import Foundation
 
 enum ServiceErrors: Int, Error {
-	case tooManyRequests = 422
+	case unprocessable = 422
 	case serviceUnavailable = 503
 	case forbidden = 403
 	case notFound = 404
