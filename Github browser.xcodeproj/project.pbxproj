@@ -24,6 +24,9 @@
 		CEA48C6E2AC9C6D200E1C7A4 /* MakeErrorString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA48C6D2AC9C6D200E1C7A4 /* MakeErrorString.swift */; };
 		CEB8B3852AC86E07002FBFE2 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8B3832AC86E07002FBFE2 /* SearchResultTableViewCell.swift */; };
 		CEB8B3862AC86E07002FBFE2 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B3842AC86E07002FBFE2 /* SearchResultTableViewCell.xib */; };
+		CEB8B3882AC97481002FBFE2 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8B3872AC97481002FBFE2 /* RepoDetailsViewController.swift */; };
+		CEB8B38A2AC9749C002FBFE2 /* RepoDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B3892AC9749C002FBFE2 /* RepoDetails.storyboard */; };
+		CEB8B38C2AC97939002FBFE2 /* RepoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8B38B2AC97939002FBFE2 /* RepoDetailsPresenter.swift */; };
 		CEB8B38F2AC989BB002FBFE2 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8B38E2AC989BB002FBFE2 /* LoaderView.swift */; };
 		CEB8B3912AC9A049002FBFE2 /* ErrorPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8B3902AC9A049002FBFE2 /* ErrorPopup.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,9 @@
 		CEA48C6D2AC9C6D200E1C7A4 /* MakeErrorString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeErrorString.swift; sourceTree = "<group>"; };
 		CEB8B3832AC86E07002FBFE2 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		CEB8B3842AC86E07002FBFE2 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		CEB8B3872AC97481002FBFE2 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		CEB8B3892AC9749C002FBFE2 /* RepoDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepoDetails.storyboard; sourceTree = "<group>"; };
+		CEB8B38B2AC97939002FBFE2 /* RepoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsPresenter.swift; sourceTree = "<group>"; };
 		CEB8B38E2AC989BB002FBFE2 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		CEB8B3902AC9A049002FBFE2 /* ErrorPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +118,7 @@
 				CE44D13C2AC31B1000F12B48 /* Storyboards */,
 				CE44D1282AC31AD500F12B48 /* GitRepoSearchViewController.swift */,
 				CE6131212AC703BC00B2B3A6 /* SearchResultsViewController.swift */,
+				CEB8B3872AC97481002FBFE2 /* RepoDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 			children = (
 				CE6131232AC7119100B2B3A6 /* GitRepoSearchPresenter.swift */,
 				CE6131252AC852F900B2B3A6 /* SearchResultPresenter.swift */,
+				CEB8B38B2AC97939002FBFE2 /* RepoDetailsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				CE44D12F2AC31AD700F12B48 /* LaunchScreen.storyboard */,
 				CE44D12A2AC31AD500F12B48 /* Search.storyboard */,
 				CE44D1482AC6F10400F12B48 /* SearchResults.storyboard */,
+				CEB8B3892AC9749C002FBFE2 /* RepoDetails.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -229,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE44D1312AC31AD700F12B48 /* LaunchScreen.storyboard in Resources */,
+				CEB8B38A2AC9749C002FBFE2 /* RepoDetails.storyboard in Resources */,
 				CEB8B3862AC86E07002FBFE2 /* SearchResultTableViewCell.xib in Resources */,
 				CE44D12E2AC31AD700F12B48 /* Assets.xcassets in Resources */,
 				CE44D12C2AC31AD500F12B48 /* Search.storyboard in Resources */,
@@ -245,10 +255,12 @@
 			files = (
 				CEB8B3912AC9A049002FBFE2 /* ErrorPopup.swift in Sources */,
 				CE44D1292AC31AD500F12B48 /* GitRepoSearchViewController.swift in Sources */,
+				CEB8B3882AC97481002FBFE2 /* RepoDetailsViewController.swift in Sources */,
 				CEB8B3852AC86E07002FBFE2 /* SearchResultTableViewCell.swift in Sources */,
 				CEB8B38F2AC989BB002FBFE2 /* LoaderView.swift in Sources */,
 				CE44D1422AC5949700F12B48 /* CustomErrors.swift in Sources */,
 				CE44D1442AC6C23A00F12B48 /* GitRepoDetailsModel.swift in Sources */,
+				CEB8B38C2AC97939002FBFE2 /* RepoDetailsPresenter.swift in Sources */,
 				CE6131262AC852F900B2B3A6 /* SearchResultPresenter.swift in Sources */,
 				CE44D1252AC31AD500F12B48 /* AppDelegate.swift in Sources */,
 				CE44D1272AC31AD500F12B48 /* SceneDelegate.swift in Sources */,
